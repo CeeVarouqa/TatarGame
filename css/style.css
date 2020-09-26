@@ -1,0 +1,66 @@
+
+.center{
+  justify-content: center;
+  text-align: center;
+}
+
+/*Size and style of all tiles*/
+.tile{
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  display: inline-block;
+  font-size: .9em;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#BoardArea {
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #D2B48C;
+  width: 40%;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.tableRow{
+  display: flex;
+  justify-content: center;
+}
+
+
+/*Set board images*/
+.board {
+  background-image: url("../images/boardTiles/blankTile.png");
+}
+
+.doubleLetter{
+  background-image: url("../images/boardTiles/doubleLetterTile.png");
+}
+
+.doubleWord{
+  background-image: url("../images/boardTiles/doubleWordTile.png");
+}
+
+.tripleLetter{
+  background-image: url("../images/boardTiles/tripleLetterTile.png");
+}
+
+.tripleWord{
+  background-image: url("../images/boardTiles/tripleWordTile.png");
+}
+
+.start{
+  background-image: url("../images/boardTiles/startTile.png");
+}
+
+
+#LetterArea {
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  background-image: url("../images/scrabble-tile-holder-406774_640.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}

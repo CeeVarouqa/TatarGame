@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+
+<!--
+        File: /usr/cs/undergrad/2020/yzhu/public_html/index.html
+        COMP 4610 Assignment: Scrabble
+        Yinghui Zhu, Umass Lowell Computer Science, yinghui_zhu@student.uml.edu
+        Copy (c) 2019 by Yinghui Zhu. All s reserved.
+        Updated December 18th 2019
+
+        This is the html file for a scrabble game
+        All images taken from https://jesseheines.com/~heines/91.461/91.461-2015-16f/461-assn/Scrabble_Tiles.html and https://europeisnotdead.com/european-longest-words/
+    -->
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>
+    Scrabble
+  </title>
+  <!-- stylesheets-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+  <h1 class="text-center">
+    Scrabble
+  </h1>
+  <div>
+    <div id="GameArea">
+      <!-- Scrabble Board-->
+      <table id="BoardArea">
+        <tr class="tableRow row0">
+          <td class="board tile column0 tripleWord">
+          </td>
+          <td class="board tile column1">
+          </td>
+          <td class="board tile column2">
+          </td>
+          <td class="board tile column3 doubleLetter">
+          </td>
+          <td class="board tile column4">
+          </td>
+          <td class="board tile column5">
+          </td>
+          <td class="board tile column6">
+          </td>
+          <td class="board tile column7 tripleWord">
+          </td>
+          <td class="board tile column8">
+          </td>
+          <td class="board tile column9">
+          </td>
+          <td class="board tile column10">
+          </td>
+          <td class="board tile column11 doubleLetter">
+          </td>
+          <td class="board tile column12">
+          </td>
+          <td class="board tile column13">
+          </td>
+          <td class="board tile column14 tripleWord">
+          </td>
+        </tr>
+        <tr class="tableRow row1">
+          <td class="board tile column0">
+          </td>
+          <td class="board tile column1 doubleWord">
+          </td>
+          <td class="board tile column2">
+          </td>
+          <td class="board tile column3">
+          </td>
+          <td class="board tile column4">
+          </td>
+          <td class="board tile column5 tripleLetter">
+          </td>
+          <td class="board tile column6">
+          </td>
+          <td class="board tile column7">
+          </td>
+          <td class="board tile column8">
+          </td>
+          <td class="board tile column9 tripleLetter">
+          </td>
+          <td class="board tile column10">
+          </td>
+          <td class="board tile column11">
+          </td>
+          <td class="board tile column12">
+          </td>
+          <td class="board tile column13 doubleWord">
+          </td>
+          <td class="board tile column14">
+          </td>
+        </tr>
+        <tr class="tableRow row2">
+          <td class="board tile column0">
+          </td>
+          <td class="board tile column1">
+          </td>
+          <td class="board tile column2 doubleWord">
+          </td>
+          <td class="board tile column3">
+          </td>
+          <td class="board tile column4">
+          </td>
+          <td class="board tile column5">
+          </td>
+          <td class="board tile column6 doubleLetter">
+          </td>
+          <td class="board tile column7">
+          </td>
+          <td class="board tile column8 doubleLetter">
+          </td>
+          <td class="board tile column9">
+          </td>
+          <td class="board tile column10">
+          </td>
+          <td class="board tile column11">
+          </td>
+          <td class="board tile column12 doubleWord">
+          </td>
+          <td class="board tile column13">
+          </td>
+          <td class="board tile column14">
+          </td>
+        </tr>
+        <tr class="tableRow row3">
+          <td class="board tile column0 doubleLetter">
+          </td>
+          <td class="board tile column1">
+          </td>
+          <td class="board tile column2">
+          </td>
+          <td class="board tile column3 doubleWord">
+          </td>
+          <td class="board tile column4">
+          </td>
+          <td class="board tile column5">
+          </td>
+          <td class="board tile column6">
+          </td>
+          <td class="board tile column7 doubleLetter">
+          </td>
+          <td class="board tile column8">
+          </td>
+          <td class="board tile column9">
+          </td>
+          <td class="board tile column10">
+          </td>
+          <td class="board tile column11 doubleWord">
+          </td>
+          <td class="board tile column12">
+          </td>
+          <td class="board tile column13">
+          </td>
+          <td class="board tile column14 doubleLetter">
+          </td>
+        </tr>
+        <tr class="tableRow row4">
+          <td class="board tile column0">
+          </td>
+          <td class="board tile column1">
+          </td>
+          <td class="board tile column2">
+          </td>
+          <td class="board tile column3">
+          </td>
+          <td class="board tile column4 doubleWord">
+          </td>
+          <td class="board tile column5">
+          </td>
+          <td class="board tile column6">
+          </td>
+          <td class="board tile column7">
+          </td>
+          <td class="board tile column8">
+          </td>
+          <td class="board tile column9">
+          </td>
+          <td class="board tile column10 doubleWord">
+          </td>
+          <td class="board tile column11">
+          </td>
+          <td class="board tile column12">
+          </td>
+          <td class="board tile column13">
+          </td>
+          <td class="board tile column14">
+          </td>
+        </tr>
+        <tr class="tableRow row5">
+          <td class="board tile column0">
+          </td>
+          <td class="board tile column1 tripleLetter">
+          </td>
+          <td class="board tile column2">
+          </td>
+          <td class="board tile column3">
+          </td>
+          <td class="board tile column4">
+          </td>
+          <td class="board tile column5 tripleLetter">
+          </td>
+          <td class="board tile column6">
+          </td>
+          <td class="board tile column7">
+          </td>
+          <td class="board tile column8">
+          </td>
+          <td class="board tile column9 tripleLetter">
+          </td>
+          <td class="board tile column10">
+          </td>
+          <td class="board tile column11">
+          </td>
+          <td class="board tile column12">
+          </td>
+          <td class="board tile column13 tripleLetter">
+          </td>
+          <td class="board tile column14">
+          </td>
+        </tr>
+        <tr class="tableRow row6">
+          <td class="board tile column0">
+          </td>
+          <td class="board tile column1">
+          </td>
+          <td class="board tile column2 doubleLetter">
+          </td>
+          <td class="board tile column3">
+          </td>
+          <td class="board tile column4">
+          </td>
+          <td class="board tile column5">
+          </td>
+          <td class="board tile column6 doubleLetter">
+          </td>
+          <td class="board tile column7">
+          </td>
+          <td class="board tile column8 doubleLetter">
+          </td>
+          <td class="board tile column9">
+          </td>
+          <td class="board tile column10">
+          </td>
+          <td class="board tile column11">
+          </td>
+          <td class="board tile column12 doubleLetter">
+          </td>
+          <td class="board tile column13">
+          </td>
+          <td class="board tile column14">
+          </td>
+        </tr>
+        <tr class="tableRow row7">
+          <td class="board tile column0 tripleWord">
+          </td>
+          <td class="board tile column1">
+          </td>
+          <td class="board tile column2">
+          </td>
+          <td class="board tile column3 doubleLetter">
+          </td>
+          <td class="board tile column4">
+          </td>
+          <td class="board tile column5">
+          </td>
+          <td class="board tile column6">
+          </td>
+          <td class="board tile column7 start">
+          </td>
+          <td class="board tile column8">
+          </td>
+          <td class="board tile column9">
+          </td>
+          <td class="board tile column10">
+          </td>
+          <td class="board tile column11 doubleLetter">
+          </td>
+          <td class="board tile column12">
+          </td>
+          <td class="board tile column13">
+          </td>
+          <td class="board tile column14 tripleWord">
+          </td>
+        </tr>
+        <tr class="tableRow row8">
+          <td class="board tile column0">
+          </td>
+          <td class="board tile column1">
+          </td>
+          <td class="board tile column2 doubleLetter">
+          </td>
+          <td class="board tile column3">
+          </td>
+          <td class="board tile column4">
+          </td>
+          <td class="board tile column5">
+          </td>
+          <td class="board tile column6 doubleLetter">
+          </td>
+          <td class="board tile column7">
+          </td>
+          <td class="board tile column8 doubleLetter">
+          </td>
+          <td class="board tile column9">
+          </td>
+          <td class="board tile column10">
+          </td>
+          <td class="board tile column11">
+          </td>
+          <td class="board tile column12 doubleLetter">
+          </td>
+          <td class="board tile column13">
+          </td>
+          <td class="board tile column14">
+          </td>
+        </tr>
+        <tr class="tableRow row9">
+          <td class="board tile column0">
+          </td>
+          <td class="board tile column1 tripleLetter">
+          </td>
+          <td class="board tile column2">
+          </td>
+          <td class="board tile column3">
+          </td>
+          <td class="board tile column4">
+          </td>
+          <td class="board tile column5 tripleLetter">
+          </td>
+          <td class="board tile column6">
+          </td>
+          <td class="board tile column7">
+          </td>
+          <td class="board tile column8">
+          </td>
+          <td class="board tile column9 tripleLetter">
+          </td>
+          <td class="board tile column10">
+          </td>
+          <td class="board tile column11">
+          </td>
+          <td class="board tile column12">
+          </td>
+          <td class="board tile column13 tripleLetter">
+          </td>
+          <td class="board tile column14">
+          </td>
+        </tr>
+        <tr class="tableRow row10">
+          <td class="board tile column0">
+          </td>
+          <td class="board tile column1">
+          </td>
+          <td class="board tile column2">
+          </td>
+          <td class="board tile column3">
+          </td>
+          <td class="board tile column4 doubleWord">
+          </td>
+          <td class="board tile column5">
+          </td>
+          <td class="board tile column6">
+          </td>
+          <td class="board tile column7">
+          </td>
+          <td class="board tile column8">
+          </td>
+          <td class="board tile column9">
+          </td>
+          <td class="board tile column10 doubleWord">
+          </td>
+          <td class="board tile column11">
+          </td>
+          <td class="board tile column12">
+          </td>
+          <td class="board tile column13">
+          </td>
+          <td class="board tile column14">
+          </td>
+        </tr>
+        <tr class="tableRow row11">
+          <td class="board tile column0 doubleLetter">
+          </td>
+          <td class="board tile column1">
+          </td>
+          <td class="board tile column2">
+          </td>
+          <td class="board tile column3 doubleWord">
+          </td>
+          <td class="board tile column4">
+          </td>
+          <td class="board tile column5">
+          </td>
+          <td class="board tile column6">
+          </td>
+          <td class="board tile column7 doubleLetter">
+          </td>
+          <td class="board tile column8">
+          </td>
+          <td class="board tile column9">
+          </td>
+          <td class="board tile column10">
+          </td>
+          <td class="board tile column11 doubleWord">
+          </td>
+          <td class="board tile column12">
+          </td>
+          <td class="board tile column13">
+          </td>
+          <td class="board tile column14 doubleLetter">
+          </td>
+        </tr>
+        <tr class="tableRow row12">
+          <td class="board tile column0">
+          </td>
+          <td class="board tile column1">
+          </td>
+          <td class="board tile column2 doubleWord">
+          </td>
+          <td class="board tile column3">
+          </td>
+          <td class="board tile column4">
+          </td>
+          <td class="board tile column5">
+          </td>
+          <td class="board tile column6 doubleLetter">
+          </td>
+          <td class="board tile column7">
+          </td>
+          <td class="board tile column8 doubleLetter">
+          </td>
+          <td class="board tile column9">
+          </td>
+          <td class="board tile column10">
+          </td>
+          <td class="board tile column11">
+          </td>
+          <td class="board tile column12 doubleWord">
+          </td>
+          <td class="board tile column13">
+          </td>
+          <td class="board tile column14">
+          </td>
+        </tr>
+        <tr class="tableRow row13">
+          <td class="board tile column0">
+          </td>
+          <td class="board tile column1 doubleWord">
+          </td>
+          <td class="board tile column2">
+          </td>
+          <td class="board tile column3">
+          </td>
+          <td class="board tile column4">
+          </td>
+          <td class="board tile column5 tripleLetter">
+          </td>
+          <td class="board tile column6">
+          </td>
+          <td class="board tile column7">
+          </td>
+          <td class="board tile column8">
+          </td>
+          <td class="board tile column9 tripleLetter">
+          </td>
+          <td class="board tile column10">
+          </td>
+          <td class="board tile column11">
+          </td>
+          <td class="board tile column12">
+          </td>
+          <td class="board tile column13 doubleWord">
+          </td>
+          <td class="board tile column14">
+          </td>
+        </tr>
+        <tr class="tableRow row14">
+          <td class="board tile column0 tripleWord">
+          </td>
+          <td class="board tile column1">
+          </td>
+          <td class="board tile column2">
+          </td>
+          <td class="board tile column3 doubleLetter">
+          </td>
+          <td class="board tile column4">
+          </td>
+          <td class="board tile column5">
+          </td>
+          <td class="board tile column6">
+          </td>
+          <td class="board tile column7 tripleWord">
+          </td>
+          <td class="board tile column8">
+          </td>
+          <td class="board tile column9">
+          </td>
+          <td class="board tile column10">
+          </td>
+          <td class="board tile column11 doubleLetter">
+          </td>
+          <td class="board tile column12">
+          </td>
+          <td class="board tile column13">
+          </td>
+          <td class="board tile column14 tripleWord">
+          </td>
+        </tr>
+      </table>
+      <!-- Player hand-->
+      <div id="LetterArea" class="center">
+        <div class="draggable letter tile" id="firstLetter">
+        </div>
+        <div class="draggable letter tile" id="secondLetter">
+        </div>
+        <div class="draggable letter tile" id="thirdLetter">
+        </div>
+        <div class="draggable letter tile" id="fourthLetter">
+        </div>
+        <div class="draggable letter tile" id="fifthLetter">
+        </div>
+        <div class="draggable letter tile" id="sixthLetter">
+        </div>
+        <div class="draggable letter tile" id="seventhLetter">
+        </div>
+      </div>
+    </div>
+
+    <div id="scoreArea" class="center">
+      <h3>Your score for this word is: <span id="currentScore"></span>
+      </h3>
+      <h3>Your total score is: <span id="totalScore"></span>
+      </h3>
+    </div>
+
+    <div class="center">
+      <button id="newTiles" onclick="newRound()">Draw New Tiles</button>
+    </div>
+    <div class="center">
+      <button onclick="newGame()" id="submit">New Game</button>
+    </div>
+  </div>
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- Latest compiled JavaScript for BootStrap-->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+  <!-- jQuery Validation Plugin-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/additional-methods.js"></script>
+
+  <!-- jQuery UI Plugin-->
+  <script src="https://code.jquery.com/ui/jquery-ui-git.js"></script>
+
+  <!-- Custom scripts -->
+  <script src="js/file.js"></script>
+</body>
+
+</html>
