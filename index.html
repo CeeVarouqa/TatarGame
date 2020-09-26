@@ -1,15 +1,5 @@
 <!DOCTYPE html>
 
-<!--
-        File: /usr/cs/undergrad/2020/yzhu/public_html/index.html
-        COMP 4610 Assignment: Scrabble
-        Yinghui Zhu, Umass Lowell Computer Science, yinghui_zhu@student.uml.edu
-        Copy (c) 2019 by Yinghui Zhu. All s reserved.
-        Updated December 18th 2019
-
-        This is the html file for a scrabble game
-        All images taken from https://jesseheines.com/~heines/91.461/91.461-2015-16f/461-assn/Scrabble_Tiles.html and https://europeisnotdead.com/european-longest-words/
-    -->
 <html lang="en">
 
 <head>
@@ -21,6 +11,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  
 </head>
 
 <body>
@@ -32,13 +23,13 @@
       <!-- Scrabble Board-->
       <table id="BoardArea">
         <tr class="tableRow row0">
-          <td class="board tile column0 tripleWord">
+          <td class="board tile column0">
           </td>
           <td class="board tile column1">
           </td>
           <td class="board tile column2">
           </td>
-          <td class="board tile column3 doubleLetter">
+          <td class="board tile column3 ">
           </td>
           <td class="board tile column4">
           </td>
@@ -46,7 +37,7 @@
           </td>
           <td class="board tile column6">
           </td>
-          <td class="board tile column7 tripleWord">
+          <td class="board tile column7 ">
           </td>
           <td class="board tile column8">
           </td>
@@ -54,27 +45,27 @@
           </td>
           <td class="board tile column10">
           </td>
-          <td class="board tile column11 doubleLetter">
+          <td class="board tile column11 ">
           </td>
           <td class="board tile column12">
           </td>
           <td class="board tile column13">
           </td>
-          <td class="board tile column14 tripleWord">
+          <td class="board tile column14 ">
           </td>
         </tr>
         <tr class="tableRow row1">
           <td class="board tile column0">
           </td>
-          <td class="board tile column1 doubleWord">
+          <td class="board tile column1 ">
           </td>
-          <td class="board tile column2">
+          <td class="board tile column2 ">
           </td>
-          <td class="board tile column3">
+          <td class="board tile column3 ">
           </td>
           <td class="board tile column4">
           </td>
-          <td class="board tile column5 tripleLetter">
+          <td class="board tile column5 ">
           </td>
           <td class="board tile column6">
           </td>
@@ -82,7 +73,7 @@
           </td>
           <td class="board tile column8">
           </td>
-          <td class="board tile column9 tripleLetter">
+          <td class="board tile column9 ">
           </td>
           <td class="board tile column10">
           </td>
@@ -90,7 +81,7 @@
           </td>
           <td class="board tile column12">
           </td>
-          <td class="board tile column13 doubleWord">
+          <td class="board tile column13 ">
           </td>
           <td class="board tile column14">
           </td>
@@ -100,19 +91,19 @@
           </td>
           <td class="board tile column1">
           </td>
-          <td class="board tile column2 doubleWord">
+          <td class="board tile column2 ">
           </td>
-          <td class="board tile column3">
+          <td class="board tile column3 ">
           </td>
-          <td class="board tile column4">
+          <td class="board tile column4 ">
           </td>
-          <td class="board tile column5">
+          <td class="board tile column5 tripleLetter">
           </td>
-          <td class="board tile column6 doubleLetter">
+          <td class="board tile column6 tripleWord ">
           </td>
-          <td class="board tile column7">
+          <td class="board tile column7 doubleLetter">
           </td>
-          <td class="board tile column8 doubleLetter">
+          <td class="board tile column8 tripleWord">
           </td>
           <td class="board tile column9">
           </td>
@@ -120,7 +111,7 @@
           </td>
           <td class="board tile column11">
           </td>
-          <td class="board tile column12 doubleWord">
+          <td class="board tile column12 ">
           </td>
           <td class="board tile column13">
           </td>
@@ -128,38 +119,6 @@
           </td>
         </tr>
         <tr class="tableRow row3">
-          <td class="board tile column0 doubleLetter">
-          </td>
-          <td class="board tile column1">
-          </td>
-          <td class="board tile column2">
-          </td>
-          <td class="board tile column3 doubleWord">
-          </td>
-          <td class="board tile column4">
-          </td>
-          <td class="board tile column5">
-          </td>
-          <td class="board tile column6">
-          </td>
-          <td class="board tile column7 doubleLetter">
-          </td>
-          <td class="board tile column8">
-          </td>
-          <td class="board tile column9">
-          </td>
-          <td class="board tile column10">
-          </td>
-          <td class="board tile column11 doubleWord">
-          </td>
-          <td class="board tile column12">
-          </td>
-          <td class="board tile column13">
-          </td>
-          <td class="board tile column14 doubleLetter">
-          </td>
-        </tr>
-        <tr class="tableRow row4">
           <td class="board tile column0">
           </td>
           <td class="board tile column1">
@@ -168,19 +127,19 @@
           </td>
           <td class="board tile column3">
           </td>
-          <td class="board tile column4 doubleWord">
+          <td class="board tile column4 doubleLetter">
           </td>
-          <td class="board tile column5">
+          <td class="board tile column5 ">
           </td>
-          <td class="board tile column6">
+          <td class="board tile column6 ">
           </td>
-          <td class="board tile column7">
+          <td class="board tile column7 ">
           </td>
-          <td class="board tile column8">
+          <td class="board tile column8 ">
           </td>
-          <td class="board tile column9">
+          <td class="board tile column9 tripleLetter">
           </td>
-          <td class="board tile column10 doubleWord">
+          <td class="board tile column10 ">
           </td>
           <td class="board tile column11">
           </td>
@@ -191,34 +150,66 @@
           <td class="board tile column14">
           </td>
         </tr>
-        <tr class="tableRow row5">
-          <td class="board tile column0">
+        <tr class="tableRow row4">
+           <td class="board tile column0">
           </td>
-          <td class="board tile column1 tripleLetter">
+          <td class="board tile column1 ">
           </td>
           <td class="board tile column2">
           </td>
-          <td class="board tile column3">
+          <td class="board tile column3 tripleLetter">
           </td>
-          <td class="board tile column4">
+          <td class="board tile column4 ">
           </td>
-          <td class="board tile column5 tripleLetter">
+          <td class="board tile column5 ">
           </td>
-          <td class="board tile column6">
+          <td class="board tile column6 ">
           </td>
-          <td class="board tile column7">
+          <td class="board tile column7 ">
           </td>
-          <td class="board tile column8">
+          <td class="board tile column8 ">
           </td>
-          <td class="board tile column9 tripleLetter">
+          <td class="board tile column9 ">
           </td>
-          <td class="board tile column10">
+          <td class="board tile column10 doubleLetter">
           </td>
           <td class="board tile column11">
           </td>
           <td class="board tile column12">
           </td>
-          <td class="board tile column13 tripleLetter">
+          <td class="board tile column13 ">
+          </td>
+          <td class="board tile column14">
+          </td>
+        </tr>
+        <tr class="tableRow row5">
+           <td class="board tile column0">
+          </td>
+          <td class="board tile column1">
+          </td>
+          <td class="board tile column2 ">
+          </td>
+          <td class="board tile column3">
+          </td>
+          <td class="board tile column4 ">
+          </td>
+          <td class="board tile column5">
+          </td>
+          <td class="board tile column6 ">
+          </td>
+          <td class="board tile column7 ">
+          </td>
+          <td class="board tile column8 ">
+          </td>
+          <td class="board tile column9 ">
+          </td>
+          <td class="board tile column10">
+          </td>
+          <td class="board tile column11 doubleWord">
+          </td>
+          <td class="board tile column12 ">
+          </td>
+          <td class="board tile column13">
           </td>
           <td class="board tile column14">
           </td>
@@ -228,27 +219,27 @@
           </td>
           <td class="board tile column1">
           </td>
-          <td class="board tile column2 doubleLetter">
+          <td class="board tile column2 ">
           </td>
           <td class="board tile column3">
           </td>
-          <td class="board tile column4">
+          <td class="board tile column4 ">
           </td>
           <td class="board tile column5">
           </td>
-          <td class="board tile column6 doubleLetter">
+          <td class="board tile column6 ">
           </td>
-          <td class="board tile column7">
+          <td class="board tile column7 ">
           </td>
-          <td class="board tile column8 doubleLetter">
+          <td class="board tile column8 ">
           </td>
-          <td class="board tile column9">
+          <td class="board tile column9 ">
           </td>
           <td class="board tile column10">
           </td>
-          <td class="board tile column11">
+          <td class="board tile column11 doubleWord">
           </td>
-          <td class="board tile column12 doubleLetter">
+          <td class="board tile column12 ">
           </td>
           <td class="board tile column13">
           </td>
@@ -256,35 +247,35 @@
           </td>
         </tr>
         <tr class="tableRow row7">
-          <td class="board tile column0 tripleWord">
+          <td class="board tile column0 ">
           </td>
           <td class="board tile column1">
           </td>
           <td class="board tile column2">
           </td>
-          <td class="board tile column3 doubleLetter">
+          <td class="board tile column3 ">
           </td>
-          <td class="board tile column4">
+          <td class="board tile column4 tripleWord">
           </td>
-          <td class="board tile column5">
+          <td class="board tile column5 tripleLetter">
           </td>
-          <td class="board tile column6">
+          <td class="board tile column6 doubleWord">
           </td>
           <td class="board tile column7 start">
           </td>
-          <td class="board tile column8">
+          <td class="board tile column8 doubleWord">
           </td>
-          <td class="board tile column9">
+          <td class="board tile column9 doubleLetter">
           </td>
-          <td class="board tile column10">
+          <td class="board tile column10 tripleLetter">
           </td>
-          <td class="board tile column11 doubleLetter">
+          <td class="board tile column11 tripleWord ">
           </td>
           <td class="board tile column12">
           </td>
           <td class="board tile column13">
           </td>
-          <td class="board tile column14 tripleWord">
+          <td class="board tile column14 ">
           </td>
         </tr>
         <tr class="tableRow row8">
@@ -292,27 +283,27 @@
           </td>
           <td class="board tile column1">
           </td>
-          <td class="board tile column2 doubleLetter">
+          <td class="board tile column2 ">
           </td>
-          <td class="board tile column3">
+          <td class="board tile column3 doubleWord">
           </td>
           <td class="board tile column4">
           </td>
           <td class="board tile column5">
           </td>
-          <td class="board tile column6 doubleLetter">
+          <td class="board tile column6 ">
           </td>
           <td class="board tile column7">
           </td>
-          <td class="board tile column8 doubleLetter">
+          <td class="board tile column8 ">
           </td>
           <td class="board tile column9">
           </td>
-          <td class="board tile column10">
+          <td class="board tile column10 ">
           </td>
-          <td class="board tile column11">
+          <td class="board tile column11 doubleLetter">
           </td>
-          <td class="board tile column12 doubleLetter">
+          <td class="board tile column12 ">
           </td>
           <td class="board tile column13">
           </td>
@@ -322,15 +313,15 @@
         <tr class="tableRow row9">
           <td class="board tile column0">
           </td>
-          <td class="board tile column1 tripleLetter">
+          <td class="board tile column1 ">
           </td>
-          <td class="board tile column2">
+          <td class="board tile column2 ">
           </td>
-          <td class="board tile column3">
+          <td class="board tile column3 doubleLetter">
           </td>
           <td class="board tile column4">
           </td>
-          <td class="board tile column5 tripleLetter">
+          <td class="board tile column5 ">
           </td>
           <td class="board tile column6">
           </td>
@@ -338,15 +329,15 @@
           </td>
           <td class="board tile column8">
           </td>
-          <td class="board tile column9 tripleLetter">
+          <td class="board tile column9 ">
           </td>
           <td class="board tile column10">
           </td>
-          <td class="board tile column11">
+          <td class="board tile column11 tripleLetter">
           </td>
           <td class="board tile column12">
           </td>
-          <td class="board tile column13 tripleLetter">
+          <td class="board tile column13 ">
           </td>
           <td class="board tile column14">
           </td>
@@ -356,11 +347,11 @@
           </td>
           <td class="board tile column1">
           </td>
-          <td class="board tile column2">
+          <td class="board tile column2 ">
           </td>
-          <td class="board tile column3">
+          <td class="board tile column3 tripleWord">
           </td>
-          <td class="board tile column4 doubleWord">
+          <td class="board tile column4 ">
           </td>
           <td class="board tile column5">
           </td>
@@ -372,9 +363,9 @@
           </td>
           <td class="board tile column9">
           </td>
-          <td class="board tile column10 doubleWord">
+          <td class="board tile column10 ">
           </td>
-          <td class="board tile column11">
+          <td class="board tile column11 doubleWord">
           </td>
           <td class="board tile column12">
           </td>
@@ -384,35 +375,35 @@
           </td>
         </tr>
         <tr class="tableRow row11">
-          <td class="board tile column0 doubleLetter">
+          <td class="board tile column0 ">
           </td>
           <td class="board tile column1">
           </td>
           <td class="board tile column2">
           </td>
-          <td class="board tile column3 doubleWord">
+          <td class="board tile column3 ">
           </td>
-          <td class="board tile column4">
+          <td class="board tile column4 doubleLetter">
           </td>
           <td class="board tile column5">
           </td>
           <td class="board tile column6">
           </td>
-          <td class="board tile column7 doubleLetter">
+          <td class="board tile column7 ">
           </td>
-          <td class="board tile column8">
+          <td class="board tile column8 ">
           </td>
-          <td class="board tile column9">
+          <td class="board tile column9 ">
           </td>
-          <td class="board tile column10">
+          <td class="board tile column10 doubleWord">
           </td>
-          <td class="board tile column11 doubleWord">
+          <td class="board tile column11 ">
           </td>
           <td class="board tile column12">
           </td>
           <td class="board tile column13">
           </td>
-          <td class="board tile column14 doubleLetter">
+          <td class="board tile column14 ">
           </td>
         </tr>
         <tr class="tableRow row12">
@@ -420,27 +411,27 @@
           </td>
           <td class="board tile column1">
           </td>
-          <td class="board tile column2 doubleWord">
+          <td class="board tile column2">
           </td>
           <td class="board tile column3">
           </td>
-          <td class="board tile column4">
+          <td class="board tile column4 ">
           </td>
-          <td class="board tile column5">
+          <td class="board tile column5 doubleWord">
           </td>
           <td class="board tile column6 doubleLetter">
           </td>
-          <td class="board tile column7">
+          <td class="board tile column7 tripleWord">
           </td>
-          <td class="board tile column8 doubleLetter">
+          <td class="board tile column8 tripleLetter">
           </td>
-          <td class="board tile column9">
+          <td class="board tile column9 doubleLetter">
           </td>
           <td class="board tile column10">
           </td>
           <td class="board tile column11">
           </td>
-          <td class="board tile column12 doubleWord">
+          <td class="board tile column12 ">
           </td>
           <td class="board tile column13">
           </td>
@@ -450,7 +441,7 @@
         <tr class="tableRow row13">
           <td class="board tile column0">
           </td>
-          <td class="board tile column1 doubleWord">
+          <td class="board tile column1 ">
           </td>
           <td class="board tile column2">
           </td>
@@ -458,7 +449,7 @@
           </td>
           <td class="board tile column4">
           </td>
-          <td class="board tile column5 tripleLetter">
+          <td class="board tile column5 ">
           </td>
           <td class="board tile column6">
           </td>
@@ -466,7 +457,7 @@
           </td>
           <td class="board tile column8">
           </td>
-          <td class="board tile column9 tripleLetter">
+          <td class="board tile column9 ">
           </td>
           <td class="board tile column10">
           </td>
@@ -474,19 +465,19 @@
           </td>
           <td class="board tile column12">
           </td>
-          <td class="board tile column13 doubleWord">
+          <td class="board tile column13 ">
           </td>
           <td class="board tile column14">
           </td>
         </tr>
         <tr class="tableRow row14">
-          <td class="board tile column0 tripleWord">
+          <td class="board tile column0 ">
           </td>
           <td class="board tile column1">
           </td>
           <td class="board tile column2">
           </td>
-          <td class="board tile column3 doubleLetter">
+          <td class="board tile column3 ">
           </td>
           <td class="board tile column4">
           </td>
@@ -494,7 +485,7 @@
           </td>
           <td class="board tile column6">
           </td>
-          <td class="board tile column7 tripleWord">
+          <td class="board tile column7 ">
           </td>
           <td class="board tile column8">
           </td>
@@ -502,13 +493,13 @@
           </td>
           <td class="board tile column10">
           </td>
-          <td class="board tile column11 doubleLetter">
+          <td class="board tile column11 ">
           </td>
           <td class="board tile column12">
           </td>
           <td class="board tile column13">
           </td>
-          <td class="board tile column14 tripleWord">
+          <td class="board tile column14">
           </td>
         </tr>
       </table>
@@ -559,6 +550,8 @@
 
   <!-- Custom scripts -->
   <script src="js/file.js"></script>
+  <script type="text/javascript" src="js/tatar.js"></script>
 </body>
 
 </html>
+ 
