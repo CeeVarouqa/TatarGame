@@ -1,3 +1,70 @@
+#GameArea {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.game-wrapper {
+  width: 75%;
+  padding-right: 17.5%;
+}
+
+.game {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+
+.scores {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#scoreArea h3 {
+  font-size: 18px;
+}
+
+.scores .actions {
+  display: flex;
+  align-items: center;
+}
+
+.definitions {
+  font-size: 16px;
+}
+
+#definitions {
+  min-height: 100px;
+  border: 1px solid #CCC;
+  border-radius: 4px;
+}
+
+#find-definitions {
+  display: flex;
+  align-items: center;
+}
+
+#find-definitions input {
+  border: none;
+  background: #EFEFEF;
+  padding: 6px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+#find-definitions button {
+  border-radius: 0 4px 4px 0;
+  background: #cdcdcd;
+}
+
+#LetterArea {
+  margin-bottom: 10px;
+  width: 80%;
+  background-image: url("../images/scrabble-tile-holder-406774_640.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 .center{
   justify-content: center;
@@ -16,10 +83,8 @@
 }
 
 #BoardArea {
-  margin-left: auto;
-  margin-right: auto;
   background-color: #D2B48C;
-  width: 40%;
+  width: 50%;
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -27,6 +92,28 @@
 .tableRow{
   display: flex;
   justify-content: center;
+}
+
+.btn {
+  border: none;
+  padding: 0.5em 1em;
+  text-transform: uppercase;
+}
+
+.ml {
+  margin-left: 1em;
+}
+
+.mr {
+  margin-right: 1em;
+}
+
+.mt {
+  margin-top: 1em;
+}
+
+.mb{
+  margin-bottom: 1em;
 }
 
 
@@ -53,14 +140,4 @@
 
 .start{
   background-image: url("../images/boardTiles/startTile.png");
-}
-
-
-#LetterArea {
-  margin-left: auto;
-  margin-right: auto;
-  width: 40%;
-  background-image: url("../images/scrabble-tile-holder-406774_640.png");
-  background-repeat: no-repeat;
-  background-size: cover;
 }
