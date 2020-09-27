@@ -1,3 +1,7 @@
+body {
+  background-color:rgb(223, 223, 223);
+}
+
 #GameArea {
   display: flex;
   flex-direction: row-reverse;
@@ -83,7 +87,7 @@
 }
 
 #BoardArea {
-  background-color:	#DEB887;
+  background-color:	rgb(223, 223, 223);
   width: 50%;
   background-repeat: no-repeat;
   background-size: contain;
