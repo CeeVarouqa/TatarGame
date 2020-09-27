@@ -543,14 +543,14 @@
         </div>
 
         <div class="mt definitions">
-          <p>Word definition</p>
+          <p>Word translation</p>
           <div id="definitions">
           </div>
 
-          <p class="mt">Find word definitions</p>
+          <p class="mt">Find word translation</p>
           <div id="find-definitions">
             <input type="text" id="definition-input" placeholder="type the word">
-            <button class="btn find">Find</button>
+            <button onclick="getTranslation()" class="btn find">Find</button>
           </div>
         </div>
       </div>
@@ -571,6 +571,23 @@
 <!-- Custom scripts -->
   <script src="js/file.js"></script>
   <script type="text/javascript" src="js/tatar.js"></script>
+
+  <script>
+    async function getTranslation () {
+      const text = document.getElementById('definition-input').value;
+
+      const data = await fetch ('https://translate.tatar/translate?lang=1&text=' + text);
+      const xml = await data.text();
+      const translation = xml.match(/<translation>(.+)<\/translation>/i);
+      if (translation) {
+        console.log(translation[1]);
+        document.getElementById('definitions').innerText = translation[1];
+      } else {
+        document.getElementById('definitions').innerText = 'Не найдено';
+      }
+    }
+  </script>
+
 </body>
 
 </html>
