@@ -392,7 +392,7 @@ function checkWord(){
 function calculateScore(event, ui, removedTile) {
 
   var tileScore = parseInt($(ui.draggable)[0].getAttribute('score'));
-  // startScore = startScore + tileScore;
+  startScore = startScore + tileScore;
   if ((ui.draggable)[0].classList.contains('played')) {
     if (removedTile == true) {
       if ($(ui.draggable)[0].classList.contains('doubleLetterScore')) {
