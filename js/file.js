@@ -91,8 +91,8 @@ ScrabbleTiles[11] = {
 ScrabbleTiles[12] = {
   "letter": "ы",
   "value": 4,
-  "original-distribution": 6,
-  "numberRemaining": 6,
+  "original-distribution": 7,
+  "numberRemaining": 7,
   "image": "images/letterTiles/Scrabble_Tile_IU.jpg"
 };
 ScrabbleTiles[13] = {
@@ -300,53 +300,53 @@ $(function() {
       $(ui.draggable).draggable("option", "revert", false);
 
       //If tile is dropped on a board piece that is already occupied, revert it's location.
-      if ($(this).hasClass("occupied")) {
+      if ($(this).hasClass("occupied") || $(ui.draggable).hasClass("fixed")) {
         $(ui.draggable).draggable("option", "revert", true);
-        $(ui.draggable)[0].classList.remove("played", "doubleLetterScore", "doubleWordScore", "tripleLetterScore", "tripleWordScore");
+        $(ui.draggable)[0].classList.remove("played", "doubleLetterScore", "doubleWordScore", "tripleLetterScore", "tripleWordScore", "fiixed");
       } else {
-        // if (checkWord() == true){
-        //   $(this).addClass("occupied");
-        //   $(ui.draggable).addClass("played");
-        //   if ($(this)[0].classList.contains('doubleLetter')) {
-        //     $(ui.draggable).addClass("doubleLetterScore");
-        //   }
-        //   if ($(this)[0].classList.contains('doubleWord')) {
-        //   $(ui.draggable).addClass("doubleWordScore");
-        //   }
-        //   if ($(this)[0].classList.contains('tripleLetter')) {
-        //     $(ui.draggable).addClass("tripleLetterScore");
-        //   }
-        //   if ($(this)[0].classList.contains('tripleWord')) {
-        //     $(ui.draggable).addClass("tripleWordScore");
-        //   }
-        //   var letter = String($(ui.draggable)[0].getAttribute('letter'));
-        //   collectWord(letter);
-        //   // //Update the score for the current word dynamically
-        //   calculateScore(event, ui, false);
-        // }
-        //Otherwise track which tile it was placed on
-        $(this).addClass("occupied");
-        $(ui.draggable).addClass("played");
-        if ($(this)[0].classList.contains('doubleLetter')) {
-          $(ui.draggable).addClass("doubleLetterScore");
-        }
-        if ($(this)[0].classList.contains('doubleWord')) {
+      	var letter = String($(ui.draggable)[0].getAttribute('letter'));
+      	var scoreStart = String($(ui.draggable)[0].getAttribute('score'));
+        collectWord(letter, scoreStart);
+        if (checkWord() == true){
+          $(this).addClass("occupied");
+          $(ui.draggable).addClass("played");
+          if ($(this)[0].classList.contains('doubleLetter')) {
+            $(ui.draggable).addClass("doubleLetterScore");
+          }
+          if ($(this)[0].classList.contains('doubleWord')) {
           $(ui.draggable).addClass("doubleWordScore");
+          }
+          if ($(this)[0].classList.contains('tripleLetter')) {
+            $(ui.draggable).addClass("tripleLetterScore");
+          }
+          if ($(this)[0].classList.contains('tripleWord')) {
+            $(ui.draggable).addClass("tripleWordScore");
+          }
+          // //Update the score for the current word dynamically
+          $(ui.draggable).addClass("fixed");
+          calculateScore(event, ui, false);
+          word = "";
         }
-        if ($(this)[0].classList.contains('tripleLetter')) {
-          $(ui.draggable).addClass("tripleLetterScore");
-        }
-        if ($(this)[0].classList.contains('tripleWord')) {
-          $(ui.draggable).addClass("tripleWordScore");
-        }
-        // var letter = String($(ui.draggable)[0].getAttribute('letter'));
-        // collectWord(letter);
-        // //Update the score for the current word dynamically
-        // if (checkWord() == true){
-  
-        //   calculateScore(event, ui, false);
+
+
+
+
+        //Otherwise track which tile it was placed on
+        // $(this).addClass("occupied");
+        // $(ui.draggable).addClass("played");
+        // if ($(this)[0].classList.contains('doubleLetter')) {
+        //   $(ui.draggable).addClass("doubleLetterScore");
         // }
-        calculateScore(event, ui, false);
+        // if ($(this)[0].classList.contains('doubleWord')) {
+        //   $(ui.draggable).addClass("doubleWordScore");
+        // }
+        // if ($(this)[0].classList.contains('tripleLetter')) {
+        //   $(ui.draggable).addClass("tripleLetterScore");
+        // }
+        // if ($(this)[0].classList.contains('tripleWord')) {
+        //   $(ui.draggable).addClass("tripleWordScore");
+        // }
+        // calculateScore(event, ui, false);
         
       }
     },
@@ -364,9 +364,15 @@ $(function() {
   dealTiles(true);
 });
 
-word = ""
-function collectWord(letter){
-  word+= letter;  
+word = "";
+startScore = 0;
+function collectWord(letter, score){
+	if (word = ""){
+		alert(score);
+		startScore = score;
+	}
+	word+= letter; 
+   
 }
 
 function checkWord(){
@@ -410,7 +416,7 @@ function calculateScore(event, ui, removedTile) {
       } else if ($(ui.draggable)[0].classList.contains('tripleWordScore')) {
         currentScore = (currentScore + tileScore) * 3;
       } else {
-        currentScore = currentScore + tileScore;
+        currentScore = currentScore + tileScore + startScore;
       }
     }
   }
