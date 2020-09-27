@@ -1,7 +1,8 @@
 var scoreSum = 0;
+var startScore = 0;
 var currentScore = 0;
 var remainingTiles = 100;
-
+var firstGame = true;
 //Json to represent scrabble tiles. Taken and modified from https://jesseheines.com/~heines/91.461/91.461-2015-16f/461-assn/Scrabble_Pieces_AssociativeArray_Jesse.js
 var ScrabbleTiles = [];
 ScrabbleTiles[0] = {
@@ -305,8 +306,9 @@ $(function() {
         $(ui.draggable)[0].classList.remove("played", "doubleLetterScore", "doubleWordScore", "tripleLetterScore", "tripleWordScore", "fiixed");
       } else {
       	var letter = String($(ui.draggable)[0].getAttribute('letter'));
-      	var scoreStart = String($(ui.draggable)[0].getAttribute('score'));
-        collectWord(letter, scoreStart);
+      	var score = parseInt($(ui.draggable)[0].getAttribute('score'));
+        collectWord(letter);
+        startScore = startScore + score;
         if (checkWord() == true){
           $(this).addClass("occupied");
           $(ui.draggable).addClass("played");
@@ -365,21 +367,18 @@ $(function() {
 });
 
 word = "";
-startScore = 0;
+
 function collectWord(letter, score){
-	if (word = ""){
-		alert(score);
-		startScore = score;
+	if (word == ""){
+		startScore = 0;
 	}
 	word+= letter; 
    
 }
 
 function checkWord(){
-  alert(word);
   for (wordFromDic in tatar_dict){
     if(word===tatar_dict[wordFromDic]){
-      alert(tatar_dict[wordFromDic]);
       return true;
     }
     else{
@@ -393,6 +392,7 @@ function checkWord(){
 function calculateScore(event, ui, removedTile) {
 
   var tileScore = parseInt($(ui.draggable)[0].getAttribute('score'));
+  // startScore = startScore + tileScore;
   if ((ui.draggable)[0].classList.contains('played')) {
     if (removedTile == true) {
       if ($(ui.draggable)[0].classList.contains('doubleLetterScore')) {
@@ -408,7 +408,7 @@ function calculateScore(event, ui, removedTile) {
       }
     } else if (removedTile == false) {
       if ($(ui.draggable)[0].classList.contains('doubleLetterScore')) {
-        currentScore = currentScore + 2 * tileScore;
+        currentScore = currentScore + 2 * tileScore ;
       } else if ($(ui.draggable)[0].classList.contains('tripleLetterScore')) {
         currentScore = currentScore + 3 * tileScore;
       } else if ($(ui.draggable)[0].classList.contains('doubleWordScore')) {
@@ -416,7 +416,7 @@ function calculateScore(event, ui, removedTile) {
       } else if ($(ui.draggable)[0].classList.contains('tripleWordScore')) {
         currentScore = (currentScore + tileScore) * 3;
       } else {
-        currentScore = currentScore + tileScore + startScore;
+        currentScore = currentScore + tileScore ;
       }
     }
   }
@@ -443,37 +443,62 @@ function dealTiles(firstHand) {
       board[0].classList.remove("occupied");
     }
   }
+  if (firstGame == true){
+  	var tileNumber = [13,12,0,11,35,10,25,0,15,8];
+  	firstGame = false;
+  	var loopSentinel = Math.min(hand.length, remainingTiles);
+  	for (var i = 0; i < loopSentinel; i++) {
+    	if (ScrabbleTiles[tileNumber[i]].numberRemaining != 0) {
 
-  var loopSentinel = Math.min(hand.length, remainingTiles);
-  for (var i = 0; i < loopSentinel; i++) {
-
-    //Choose a random letter to assign
-    var tileNumber = Math.floor(Math.random() * 27)
-    if (ScrabbleTiles[tileNumber].numberRemaining != 0) {
-
-      //GIves tile new image
+      		//GIves tile new image
       
-      hand[i].style.backgroundImage = "url(" + ScrabbleTiles[tileNumber].image + ")";
+      		hand[i].style.backgroundImage = "url(" + ScrabbleTiles[tileNumber[i]].image + ")";
+      		//resets position of tile
+      		hand[i].style.left = null;
+      		hand[i].style.right = null;
+      		hand[i].style.top = null;
+      		hand[i].style.bottom = null;
+      		hand[i].setAttribute('score', ScrabbleTiles[tileNumber[i]].value);
+      		hand[i].setAttribute('letter', ScrabbleTiles[tileNumber[i]].letter)
+      		ScrabbleTiles[tileNumber[i]].numberRemaining--;
+      		remainingTiles--;
+      		}
+      	}		
+  	
+  }else{
 
-      //resets position of tile
-      hand[i].style.left = null;
-      hand[i].style.right = null;
-      hand[i].style.top = null;
-      hand[i].style.bottom = null;
+  		var loopSentinel = Math.min(hand.length, remainingTiles);
+  		for (var i = 0; i < loopSentinel; i++) {
 
-      hand[i].setAttribute('score', ScrabbleTiles[tileNumber].value);
-      hand[i].setAttribute('letter', ScrabbleTiles[tileNumber].letter)
-      ScrabbleTiles[tileNumber].numberRemaining--;
-      remainingTiles--;
-    } else {
-      //If the random function chose a letter that is no longer in the bag, do over
-      i--;
-    }
-  }
+    	//Choose a random letter to assign
+    	var tileNumber = Math.floor(Math.random() * 27)
+    	if (ScrabbleTiles[tileNumber].numberRemaining != 0) {
+
+      	//GIves tile new image
+      
+        hand[i].style.backgroundImage = "url(" + ScrabbleTiles[tileNumber].image + ")";
+
+      	//resets position of tile
+        hand[i].style.left = null;
+        hand[i].style.right = null;
+        hand[i].style.top = null;
+        hand[i].style.bottom = null;
+
+        hand[i].setAttribute('score', ScrabbleTiles[tileNumber].value);
+      	hand[i].setAttribute('letter', ScrabbleTiles[tileNumber].letter)
+      	ScrabbleTiles[tileNumber].numberRemaining--;
+      	remainingTiles--;
+    	} else {
+      	//If the random function chose a letter that is no longer in the bag, do over
+      		i--;
+    		}
+    	}	
+    }	
 };
 
 //Function for when starting a new round i.e. clear the board, draw new tiles out of the bag, and save total score
 function newRound(){
+  startGame = false;
   dealTiles(false);
   scoreSum = scoreSum + currentScore;
   currentScore = 0;
@@ -482,7 +507,7 @@ function newRound(){
 
 //Function to handle updating scores
 function enterScores(){
-  document.getElementById("currentScore").innerHTML = currentScore;
+  document.getElementById("currentScore").innerHTML = startScore;
   document.getElementById("totalScore").innerHTML = scoreSum;
 }
 
